@@ -1,0 +1,9 @@
+{
+  "name": "n8n-dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [5678, 5679],
+  "postCreateCommand": "sudo apt update && sudo apt install -y docker.io"
+}
