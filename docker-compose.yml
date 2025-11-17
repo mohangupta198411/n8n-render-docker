@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - N8N_EDITOR_BASE_URL=${RENDER_EXTERNAL_URL}
+      - N8N_WEBHOOK_TUNNEL_URL=${RENDER_EXTERNAL_URL}
+      - GENERIC_TIMEZONE=Asia/Kolkata
+    volumes:
+      - /data:/home/node/.n8n
